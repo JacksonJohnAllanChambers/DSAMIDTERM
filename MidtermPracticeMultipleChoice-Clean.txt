@@ -1,0 +1,502 @@
+CSCI 2110 
+Data Structures and Algorithms 
+MIDTERM EXAM 
+
+Module 1: Key Concepts in Object Oriented Programming 
+
+TOPICS 
+
+this parameter and toString method 
+
+•  Traditional vs. Object-oriented programming 
+•  Advantages of object-oriented programming 
+•  Encapsulation – defining objects in Java class files 
+• 
+•  Method overloading 
+•  Garbage collection in Java 
+•  Static methods and Static variables 
+• 
+•  Abstract classes and interfaces 
+•  Polymorphism in Java 
+•  Object class  
+•  Generics 
+
+Inheritance 
+
+Module 2: Algorithm Time Complexity 
+
+•  What is algorithm complexity? 
+•  How is running time of an algorithm measured? 
+•  How is it expressed as a function of the input size? - Examples 
+•  Big O notation 
+•  Deriving Big O given a function - Examples 
+•  Practical examples of algorithms with various Big Os. 
+•  Estimation Problems with Complexity 
+•  Order Arithmetic: How to look at a piece of code and derive its Big O complexity 
+•  Worst case, Best case and Average case complexity 
+
+Module 3: Unordered Lists 
+
+•  Data Structures: The Big Picture 
+•  Abstract Data Type 
+•  Concept of layering in building data structures 
+•  Unordered Lists: 
+
+o  Definition and examples  
+o 
+Implementation choices 
+o  Linked Lists: Concept and Advantages 
+o  Generic Node Class 
+o  Generic Linked List Class: LINKED LIST methods and examples 
+o  Generic Unordered List Class– Know how the methods work and how to use them 
+o  Application Examples with Unordered Lists 
+o  Complexity Analysis of Unordered Lists 
+o  Smart Search Method 
+
+1. In a java class file, get methods are also known as: 
+
+a. accessor methods 
+b. constructors 
+c. void methods 
+d. mutator methods 
+
+2. If a class is named Student, what name can you use for a constructor for this class? 
+
+a. Student 
+b. Student.java 
+c. void Student 
+d. any name can be used since the constructor can be overloaded 
+3. When defining a constructor, what do you specify for the type of value returned? 
+
+a. Primitive data type such as int 
+b. Class name such as Student 
+c. void 
+d. None – a constructor does not have an explicit return type 
+
+4. This is automatically provided for a class if you do not write one yourself 
+
+a. default accessor method 
+b. default mutator method 
+c. default constructor 
+d. default instance variable 
+
+6. What is the signature of the method whose header is given below? 
+public Rectangle modify(Rectangle r1, Point p1, int x) 
+
+a. modify(r1, p1, x) 
+b. Rectangle modify(r1, p1, x) 
+c. modify(Rectangle, Point, int) 
+d. Rectangle modify(Rectangle, Point, int) 
+
+7. A non-static method 
+
+a. can change static variables in a class 
+b. can be called without object instantiation 
+c. has to be called from inside the class 
+d. can be called by static methods 
+8. Consider the following class declaration 
+
+public class MyClass{ 
+
+private static int val; 
+private int num1; 
+private double num2; 
+//rest of the code omitted 
+
+} 
+ 
+Another class MyDemo has a main method which instantiates two objects of type MyClass. Which of 
+the following statements is correct? 
+
+a. Each object gets a separate copy of val, num1 and num2. 
+b. Each object gets a separate copy of val, but they both share one copy of num1 and num2. 
+c. Each object gets a separate copy of num1 and num2, but they both share one copy of val. 
+d. The above declaration has a syntax error. 
+
+For questions 9, 10 and 11, use the code below: 
+Consider a class to represent a Pokemon card. It has partial code given below: 
+//This class represents a Pokemon card. The card has a name (String) and hp (an int that represents 
+//healthpoints). There is also a static variable price that represents the price of the Pokemon card. 
+public class Pokemon{ 
+
+private String name; 
+private int hp; 
+private static double price; 
+//rest of the code missing 
+
+} 
+
+9. Suppose you wanted to write a method in the Pokemon class that would allow another class to 
+access the hp of this Pokemon. What would the header of such a method look like? 
+
+a. public static int getHP() 
+b. public int getHP() 
+c. public static getHP(int hp) 
+d. public int getHP(int hp) 
+
+10.  Suppose  you  wanted  to  write  a  method  in  the  Pokemon  class  that  compares  the  hp  of  “this” 
+Pokemon with the hp of another Pokemon and returns true if the hp of “this” Pokemon is greater. 
+What would the header for such a method look like? 
+
+a. public boolean compareHP(this.hp) 
+b. public void compareHP(other.getHP()) 
+c. public void compareHP(Pokemon other) 
+d. public boolean compareHP(Pokemon other) 
+
+11. Suppose you wanted to write a static method in the Pokemon class to set the price to a given value. 
+What would the header for such a class look like? 
+
+a. public static double setPrice(static double p) 
+b. public static void setPrice() 
+c. public static double setPrice(double p) 
+d. public static void setPrice(double p) 
+
+12. Consider the following group of class declarations (complete code not given): 
+public class C extends D {} 
+public class B extends D{} 
+public class D extends A{} 
+Which of the following statements is correct? 
+
+a. D is the superclass of A, and B and C are sub-classes of D 
+b. A is the subclass of B and C, and D is the superclass of B and C 
+c. A is the superclass of D, and B and C are subclasses of D 
+d. A is the subclass of D, and B and C are superclasses of D 
+ 
+13. Consider the following class declarations. If a client program has two lines: 
+GradStudent s1 = new GradStudent(); 
+System.out.println(s1.getInfo()); 
+What will be the output? 
+
+public class Student { 
+   public String getFood() { 
+      return "Pizza"; 
+   } 
+   public String getInfo()  { 
+      return this.getFood(); 
+   } 
+} 
+
+public class GradStudent extends Student { 
+   public String getFood() { 
+      return "Taco"; 
+   } 
+} 
+
+a. Taco 
+b. Pizza 
+c. The code won’t compile since getInfo is not in GradStudent class 
+d. The code won’t compile since s1 is not a Student object 
+
+14. If ClassB extends ClassA, and ClassC extends ClassB, and the following declaration has been made: 
+
+ClassA ref; 
+
+Which of the following are valid? 
+
+I. ref = new ClassA(); 
+II. ref = new ClassB(); 
+III. ref = new ClassC(); 
+
+a. I only 
+b. I and II 
+c. I, II and III 
+d. None of the above. 
+
+15. If ClassB extends ClassA, and ClassC is a superclass of ClassA, and the following declaration has 
+been made: 
+
+ClassA ref; 
+
+Which of the following are valid? 
+
+I. ref = new ClassA(); 
+II. ref = new ClassB(); 
+III. ref = new ClassC(); 
+
+a. I only 
+b. I and II 
+c. I, II and III 
+d. None of the above. 
+
+16. ClassB extends ClassA, and ClassC extends ClassB, and ClassD extends ClassC. The following is a 
+part of the code in a program: 
+
+ClassB ref; 
+ref = new ClassC(); 
+
+Which of the following statements will return TRUE? 
+
+I. System.out.println(ref instanceof ClassA); 
+II. System.out.println(ref instanceof ClassB); 
+III. System.out.println(ref instanceof ClassC); 
+IV. System.out.printlnl(ref instanceof ClassD); 
+
+a. I only 
+b. I and II 
+c. I, II and III 
+d. I, II, III and IV 
+
+17. What is the Big O complexity of the run time function  25n^4 + 45n + 256 ? 
+
+a. O(n^4) 
+b. O(n^5) 
+c. O(n) 
+d. O(256) 
+
+18. What is the Big O complexity of the run time function  n2 + 3000n + 500 n^2 * logn + 1000 ? 
+
+a. O(n^2) 
+b. O(n^2 * logn) 
+c. O(3000n) 
+d. O(n^4 * logn) 
+
+19. What is the Big O complexity of the run time function (3log n + 5)(n^3 + 2)? 
+
+a. O(n^2logn) 
+b. O(n^3logn) 
+c. O(n^3) 
+d. O(3nlogn) 
+
+20. What is the Big O complexity of the run time function (n3 + 2n^2 + 3)/n2 ? 
+
+a. O(n) 
+b. O(n^2) 
+c. O(n^3) 
+d. O(1/n) 
+
+21. What is the Big O complexity of the run time function (1+2+3+…+n)(1+2+3+…+n) ? 
+(Note: Sum of series (1+2+ … + n) = n(n+1)/2) 
+
+a. O(n4) 
+b. O(n3) 
+c. O(n2) 
+d. O(n) 
+ 
+22. What is the Big O complexity of the run time function logn^3 + n log n^4 + n logn^2 ? 
+
+a. O(n logn) 
+b. O(n2 logn) 
+c. O(n3 logn) 
+d O(n4 logn) 
+
+23. What is the Big O complexity of the run time function 
+
+root(n)*root(n)*log(n^n)
+
+a. O(n logn) 
+b. O(n2 logn) 
+c. O(n3 logn) 
+d O(n^n) 
+
+
+24. What is the Big O complexity of an algorithm that finds the average of an array of n items? 
+
+a. O(n) 
+b. O(n^2) 
+c. O(1) 
+d O(logn) 
+
+25. Which of the following has the fastest run time? 
+
+a. O(n) 
+b. O(1) 
+c. O(1/n) 
+d. O(log2n) 
+
+26. An algorithm with complexity O(n2) takes 5 ms to process 50 data items. The estimated time 
+that it would take to process 100 data items is 
+
+a.  25 ms 
+b.  10 ms 
+c.  20 ms 
+d.  2500 ms 
+
+27. An algorithm with complexity O(n2) takes 2 ms to process 50 data items. The estimated 
+number of data items that it can process in 8 ms is 
+
+a.  250 
+b.  200 
+c.  500 
+d.  100 
+
+Multiple Choice  Set No. 2 (Choose the most appropriate answer in each of the following questions). 
+
+For questions (1-8), assume that the following linked list has been created using the generic 
+Node class and the generic LinkedList class. front is the reference to the first node and null is the 
+reference from the last node. The linked list contains String data “Java”, “C”, “C++”, and 
+“Python” as shown.  (NOTE: front and null are just references, not data). 
+
+front -> Java -> C -> C++ -> Python -> null 
+
+Study the following codes and select the most appropriate answer. 
+
+1. What does the following piece of code display? 
+
+Node<T> curr = front; 
+while (curr!=null){  
+  System.out.print(curr.getData() + “->”); 
+  curr = curr.getNext(); 
+} 
+
+a.  Java -> C -> C++ -> Python -> null 
+b.  front -> Java -> C -> C++ -> Python -> null 
+c. 
+d.  Java -> C -> C++ ->  
+e.  Null 
+
+Java -> C -> C++ -> Python ->  
+
+2. What does the following piece of code display? 
+
+Node<T> curr = front; 
+while (curr.getNext()!=null){  
+  System.out.print(curr.getData() + “->”); 
+  curr = curr.getNext(); 
+} 
+
+a.  Java -> C -> C++ -> Python -> null 
+b.  front -> Java -> C -> C++ -> Python -> null 
+c. 
+d.  Java -> C -> C++ ->  
+e.  null 
+
+Java -> C -> C++ -> Python ->  
+
+3. What does the following piece of code display? 
+
+Node<T> curr = front; 
+System.out.println(curr.getNext().getNext().getData()); 
+
+a.  Java 
+b.  C 
+c.  C++ 
+d.  Python 
+e. 
+
+It will give a NullPointer exception 
+
+4. What does the following piece of code display? 
+
+Node<T> curr = front; 
+for (int i = 0; i< 2; i++){  
+  curr = curr.getNext(); 
+} 
+System.out.println(curr.getData()); 
+
+a.  Java 
+b.  C 
+c.  C++ 
+d.  Python 
+e. 
+
+It will give a NullPointer exception 
+
+5. What does the following piece of code display? 
+
+Node<T> curr = front; 
+for (int i = 0; i<=3; i++){  
+  curr = curr.getNext(); 
+} 
+System.out.println(curr.getData()); 
+
+a.  Java 
+b.  C 
+c.  C++ 
+d.  Python 
+e. 
+
+It will give a NullPointer exception 
+
+6. Suppose you want to add a node with data “Pascal” after “C++”. That is, the new linked list 
+should be: 
+front -> Java -> C -> C++ -> Pascal -> Python -> null 
+
+Consider the following piece of code to accomplish the above task: 
+Node<T> prev = front; 
+prev = prev.getNext(); 
+prev = prev.getNext(); 
+//Missing line 1 
+//Missing line 2 
+The missing lines 1 and 2, respectively, are: 
+
+a.  
+
+b.  
+
+c.  
+
+d.  
+
+e.  
+
+Node<T> newN = new Node<T> (“Pascal”, prev.getNext()); //Missing line 1 
+prev.setNext(newN); //Missing line 2 
+prev.setNext(newN); //Missing line 1 
+Node<T> newN = new Node<T> (“Pascal”, prev.getNext()); //Missing line 2 
+prev.getNext().setNext(newN); //Missing line 1 
+Node<T> newN = new Node<T> (“Pascal”, prev.getNext().getNext()); 
+//Missing line 2 
+Node<T> newN = new Node<T> (“Pascal”, prev.getNext().getNext()); 
+//Missing line 1 
+prev.getNext().setNext(newN); //Missing line 2 
+None of the above 
+
+8 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+7. Now suppose that you have the following linked list:  
+front -> Java -> C -> C++ -> Pascal -> Python -> null 
+You want to delete the node with “Pascal”.  
+Consider the following piece of code to accomplish the above task: 
+Node<T> prev = front; 
+prev = prev.getNext(); 
+prev = prev.getNext(); 
+//Missing line  
+
+Which of the following is the correct code for the missing line? 
+
+a. prev.setNext(prev.getNext().getNext()); 
+b. prev.setNext(prev.getNext()); 
+c. prev.setNext(prev.getNext().getNext().getNext(); 
+d. None of the above 
+
+8. Now suppose that you are back to the original linked list:  
+front -> Java -> C -> C++ -> Python -> null 
+
+What will the following piece of code do? 
+Node<T> curr = front; 
+curr = curr.getNext().getNext().getNext(); 
+curr.setData(“Pascal”); 
+
+a. It will change C++ to Pascal 
+b. It will change Python to Pascal 
+c. It will change C to Pascal 
+d. It will give a NullPointer exception 
+
+9. The complexity of adding a node to the front of a linked list of n items is: 
+
+a.  O(n) 
+b.  O(n2) 
+c.  O(1) 
+d.  O(log2n) 
+
+10. The complexity of removing all nodes with a given item in a linked list of n items is: 
+
+a.  O(n) 
+b.  O(n2) 
+c.  O(1) 
+d.  O(log2n) 

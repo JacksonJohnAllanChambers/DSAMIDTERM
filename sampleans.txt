@@ -1,0 +1,21 @@
+it means that regardless of the input n, the algorithm will run with a constant time / space usage.
+
+Theoretically O(1) has a larger time complexity than O(1/n) (1/n is smaller than 1) but real world algorithms can't really have the time complexity get smaller than O(1) as larger and larger inputs are entered.
+
+O(n) = linear search, O(N^2) = one nested loop, O(N^1) = one doubly nested loop, O(logn) = binary search, O(nlogn) = merge sort
+
+Big O is worst case (high bound) like a speed limit on a highway, big Omega is best case (lower bound) like the minimum rpm of your motor in idle and Big (theta) is when the upper and the lower bounds are close enough to be considered the same like when your car is always going exactly 34kmph for 2 hours.
+
+Amortized analysis refers to when an algorithm has differing functions with different complexity "costs" and the amortization is where you balance out the costly operations with the cheap ones to get a realistic analysis. A classic example is insertions in a dynamic array, normally O(1) but when it reaches the limit of the allocated storage it requires an O(n) operation to copy over the array to a new location with more storage available, this makes the complexity still basically O(n) because the O(n) operation happens so infrequently in its amortized complexity whereas if you were to use its true worst case you would classify it as O(n) which would be misleading.
+
+
+
+insertion / deletion at the head or tail of a singly or doubly linked list is O(1). an insertion or deletion in the middle for a singly or doubly linked list is O(n).
+
+A cycle is defined as when a node within a linked list can be found by traveling in one direction more than once, and the algorithm is just that, when you find a previous node again so it is O(n) because it just takes one iteration of the entire linked list.
+
+you simply link them in reverse, so if the original one was head -> python -> cobal -> C++ -> null. then what you would do is you would make a new linked list and then loop through the orginal linked list looking for the term where node.getnext() == null, once you have that term you store that in the new linked list, and you set that node to null. this will result in a new linked list that is the reverse of the orginal.
+
+you can store the values and indices into an array and then access the middle node from there after you know the full size.
+
+you simply compare the values at each node and choose one to favor if they are the same, then store the one that is sorted (smaller or larger depends on how it was sorted) and move through that linked list to the next node while keeping the other node where its at and then repeat until both the original linkedlists are at the end and you will have one sorted list. The complexity is simply O(n) because there is one operation per input into that final linkedlist. This only works because both of the lists are already sorted.

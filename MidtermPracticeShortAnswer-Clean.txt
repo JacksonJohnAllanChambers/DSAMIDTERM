@@ -1,0 +1,22 @@
+Question 2: Short answer questions  
+In your own words, answer the following questions, very briefly: 
+
+1. What does it mean for an algorithm to have a complexity of O(1)? 
+
+2. Which has larger time complexity: O(1) or O(1/n)? Why? 
+
+3. What is the use of the instanceof operator in Java? 
+
+4. What is an abstract class in Java? Give an example. 
+
+5. Give an example of an algorithm that have each of the following complexities: 
+
+O(n) 
+
+O(n^2) 
+
+O(n^3) 
+
+O(log2n) 
+
+O(nlog2n) 
