@@ -87,6 +87,19 @@ Tips:
 - Built with Vite 5, React 18, TypeScript 5. Minimal CSS for clarity.
 - If PowerShell blocks `npm`, use `npm.cmd` as shown above.
 
+## Getting a Free Gemini API Key
+
+The Short Answer and Long Answer modes use Google's Gemini AI for grading feedback. You can get a free API key:
+
+1. Go to [Google AI Studio](https://aistudio.google.com/apikey)
+2. Sign in with your Google account
+3. Click **"Create API Key"**
+4. Copy the key and paste it into the app
+
+**Free tier limits:** The free tier includes 15 requests per minute and 1,500 requests per day for Gemini Flash models — more than enough for practice sessions.
+
+**Privacy:** Your API key is stored only in your browser's local storage and is never sent to any server except Google's API.
+
 ## Deploying to GitHub Pages
 
 This app can be deployed to GitHub Pages as a static site. The AI grading features will work directly in the browser (users provide their own Gemini API key).

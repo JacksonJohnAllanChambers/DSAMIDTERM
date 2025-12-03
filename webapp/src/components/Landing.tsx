@@ -52,7 +52,17 @@ export default function Landing({ name, onNameChange, apiKey, onApiKeyChange, on
             placeholder="Paste your API key (leave blank for mock feedback)"
             style={{width:'100%', padding:'10px 12px', borderRadius:8, border:'1px solid #374151', background:'#0b1220', color:'var(--text)'}}
           />
-          <small style={{color:'var(--muted)'}}>Stored locally in your browser for this name only. Used for both Short and Long Answer evaluations.</small>
+          <small style={{color:'var(--muted)'}}>Stored locally in your browser for this name only.</small>
+          <details style={{marginTop:8, fontSize:'0.85em', color:'var(--muted)'}}>
+            <summary style={{cursor:'pointer', color:'var(--accent)'}}>How to get a free API key</summary>
+            <ol style={{marginTop:8, paddingLeft:20, lineHeight:1.6}}>
+              <li>Go to <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer" style={{color:'var(--accent)'}}>Google AI Studio</a></li>
+              <li>Sign in with your Google account</li>
+              <li>Click <strong>"Create API Key"</strong></li>
+              <li>Copy the key and paste it above</li>
+            </ol>
+            <p style={{margin:'8px 0 0'}}>The free tier includes generous usage limits for Gemini models. Your key is stored only in your browser.</p>
+          </details>
         </div>
         <div className="actions" style={{flexWrap:'wrap'}}>
           <button className="primary" onClick={onChooseMC} disabled={!name.trim()}>
